@@ -154,7 +154,13 @@ $(document).ready(function() {
 	// Edge (not implemented yet)
 	// Taskbar icon
 	$("#edgeIconFrame").click(function() {
-		alert("Not supported yet");
+		if (navigator.userAgent.includes("Edg/")) {
+        // Dacă utilizatorul este deja în Microsoft Edge, deschide o filă nouă cu "bing.com"
+        window.open("https://www.bing.com", "_blank");
+    } else {
+        // Dacă utilizatorul nu este în Microsoft Edge, deschide Microsoft Edge
+        window.open("microsoft-edge:http://www.bing.com");
+    }
 	});
 	// Task View (not implemented yet)
 	// Taskbar icon
